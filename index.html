@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+	<h1>Some new computing technique</h1>
+
+	<h2>Required world utility</h2>
+	<p>Given 2 input numbers, add  them.</p>
+	<form>
+		<label for="numA">A</label>
+		<input type="text" id=idA name=A value="+0.2" style="width:5ex">
+		+
+		<label for="numB">B</label>
+		<input type="text" id=idB name=B value="-0.5" style="width:5ex">
+		=
+		<span id=idC name=C>?</span> (C)
+		<button type="button" id=idF onclick="stdAdd()">free js</button>
+		<button type="button" id=idP onclick="bsvAdd()">pay bsv use OP_ADD</button>
+	</form>
+
+	<h2>Standard method</h2>
+	<p>Use javascript to calculate using the standard method on the client itself for free.</p>
+
+	<h2>New method using BitCoin script</h2>
+	<p>Use BitCoin script to calculate the improved solution by the new method for a paid fee.</p>
+
+<script>
+	let a = document.getElementById("idA");
+	let b = document.getElementById("idB");
+	let c = document.getElementById("idC");
+	let f = document.getElementById("idFree");
+	function stdAdd() {
+		c.innerText = Number(a.value) + Number(b.value);
+	}
+	function bsvAdd() {
+		// use BitCoin script through sCrypt or any other method.
+		c.innerText = "?";
+	}
+</script>
+</body>
+</html>
